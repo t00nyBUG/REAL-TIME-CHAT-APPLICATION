@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LiveChat - Real-time Chat Application</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Welcome Screen -->
+        <div id="welcome-screen" class="welcome-screen">
+            <div class="welcome-card">
+                <div class="welcome-header">
+                    <h1>LiveChat</h1>
+                    <p>Connect and chat in real-time</p>
+                </div>
+                <form id="join-form" class="join-form">
+                    <div class="input-group">
+                        <label for="username">Enter your name</label>
+                        <input 
+                            type="text" 
+                            id="username" 
+                            placeholder="Your name..." 
+                            maxlength="20" 
+                            required
+                        >
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        Join Chat
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Chat Interface -->
+        <div id="chat-screen" class="chat-screen hidden">
+            <div class="chat-container">
+                <!-- Header -->
+                <header class="chat-header">
+                    <div class="header-info">
+                        <h2>LiveChat</h2>
+                        <div class="connection-status">
+                            <span id="status-indicator" class="status-indicator"></span>
+                            <span id="status-text">Connected</span>
+                        </div>
+                    </div>
+                    <div class="header-actions">
+                        <button id="leave-btn" class="btn btn-secondary">Leave Chat</button>
+                    </div>
+                </header>
+
+                <div class="chat-body">
+                    <!-- Sidebar -->
+                    <aside class="sidebar">
+                        <div class="sidebar-header">
+                            <h3>Online Users</h3>
+                            <span id="user-count" class="user-count">0</span>
+                        </div>
+                        <div id="users-list" class="users-list"></div>
+                    </aside>
+
+                    <!-- Main Chat -->
+                    <main class="chat-main">
+                        <div id="messages-container" class="messages-container">
+                            <div class="welcome-message">
+                                <p>Welcome to LiveChat! Start a conversation...</p>
+                            </div>
+                        </div>
+                        
+                        <div id="typing-indicator" class="typing-indicator hidden">
+                            <span class="typing-text"></span>
+                            <div class="typing-dots">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+
+                        <form id="message-form" class="message-form">
+                            <div class="input-wrapper">
+                                <input 
+                                    type="text" 
+                                    id="message-input" 
+                                    placeholder="Type your message..." 
+                                    maxlength="500"
+                                    autocomplete="off"
+                                >
+                                <button type="submit" class="send-btn" disabled>
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                        <path d="M22 2L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </form>
+                    </main>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
