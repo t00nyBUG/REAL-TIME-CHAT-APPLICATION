@@ -149,4 +149,10 @@ It’s proof that powerful apps don’t have to be complicated. With just HTML, 
 
 What starts as a small chat window today could turn into tomorrow’s next big social platform.
 
+OUTPUT:
+
+
+<img width="1914" height="907" alt="Image" src="https://github.com/user-attachments/assets/c7dbeba8-e445-430c-88a1-efdf8c43e0b2" />
+<img width="1914" height="927" alt="Image" src="https://github.com/user-attachments/assets/a2a51f59-a551-4d1d-b9ac-a2ed52733109" />
+
 
